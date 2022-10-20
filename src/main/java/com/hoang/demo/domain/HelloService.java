@@ -57,13 +57,20 @@ public class HelloService {
         }
        return null ;
     }
-    public List<Customer> getCustomerbyName(String name){
-        List<Customer> dsUser = new ArrayList<>();
-        for(int i =0;i < customerList.size();i++){
-            if(customerList.get(i).getName().contains(name)){
-                dsUser.add(customerList.get(i));
-            }
+    public Customer searchUser(String name, int age){
+        for (Customer ct: customerList) {
+            if(ct.getName().contains(name) && ct.getAge() == age)
+                return ct;
         }
-        return dsUser ;
+        return null;
     }
+//    public List<Customer> getCustomerbyName(String name){
+//        List<Customer> dsUser = new ArrayList<>();
+//        for(int i =0;i < customerList.size();i++){
+//            if(customerList.get(i).getName().contains(name)){
+//                dsUser.add(customerList.get(i));
+//            }
+//        }
+//        return dsUser ;
+//    }
 }

@@ -31,14 +31,14 @@ public class Hello {
         return helloService.getCustomerList();
     }
 
-    @GetMapping("/search/{id}")
+    @GetMapping("/customer/{id}")
     public Customer getcustomerbyID (@PathVariable("id") int id  ) {
         return helloService.searchId(id);
     }
 
-    @GetMapping("/searchnameage")
-    public List<Customer> getcustomerbyName (@RequestParam(name = "name") String name) {
-        return helloService.getCustomerbyName(name);
+    @GetMapping("/customer/search")
+    public Customer getcustomerbyName (@RequestParam(name = "name") String name, @RequestParam(name = "age") int age) {
+        return helloService.searchUser(name,age);
     }
 
     @PostMapping("/customer")
