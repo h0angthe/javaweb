@@ -31,8 +31,8 @@ public class Hello {
         return helloService.getCustomerList();
     }
 
-    @GetMapping("/search")
-    public Customer getcustomerbyID (@RequestParam(name = "id") int id  ) {
+    @GetMapping("/search/{id}")
+    public Customer getcustomerbyID (@PathVariable("id") int id  ) {
         return helloService.searchId(id);
     }
 

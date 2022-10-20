@@ -51,7 +51,6 @@ public class HelloService {
     }
 
     public Customer searchId(int id){
-        List<Customer> cs = new ArrayList<>();
         for (Customer ct: customerList) {
             if(ct.getId()== id)
                 return ct;
